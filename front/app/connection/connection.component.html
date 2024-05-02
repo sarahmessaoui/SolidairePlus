@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <link rel="stylesheet" href="./connection.component.css">
+  </head>
+  <body >
+    <div class="container" id="container">
+        <div class="form-container sign-up-container">
+          <form action="#">
+            <h1>Créer un compte</h1>
+            <span>ou utilisez votre e-mail pour l'inscription</span>
+            <input type="text" placeholder="Cin" />
+            <input type="email" placeholder="Nom" />
+            <input type="email" placeholder="Prénom" />
+            <input type="email" placeholder="Email" />
+            <input type="email" placeholder="Num tel" />
+            <input type="password" placeholder="Mot de passe" />
+            <select name="Role">
+                <option disabled selected>Role</option>
+                
+                  <option>Handicapé</option>
+                  <option>Collecteur</option>
+                  <option>Donneur</option>
+                
+              </select>
+            <button>créer compte</button>
+            </form>
+
+            
+        </div>
+        <div class="form-container sign-in-container">
+          <form  action="#">
+            <h1>S'authentifier</h1>
+            
+            <span>connecter a votre compte</span>
+            <input type="email" placeholder="Email"  name="email" [(ngModel)] = "email"/>
+            <input type="password" placeholder="Mot de passe" name="password" [(ngModel)] = "password" />
+            <a href="#" class="mot">Mot de passe oublié?</a>
+            <button (click)="connecter()" class="btn" >Se connecter</button>
+          </form>
+        </div>
+        <div class="overlay-container">
+          <div class="overlay">
+            <div class="overlay-panel overlay-left">
+              <h1>Bienvenue de retour ! </h1>
+              <p> Pour rester connecté avec nous, veuillez vous connecter avec vos informations personnelles</p>
+              <button class="ghost" id="signIn">S'inscrire</button>
+            </div>
+            <div class="overlay-panel overlay-right">
+              <h1>Bienvenue !</h1>
+              <p> Entrez vos coordonnées personnelles et commencez votre parcours avec nous</p>
+             <a href="inscrire"class="ghost" id="signUp">S'inscrire</a>
+            </div>
+          </div>
+        </div>
+      </div>

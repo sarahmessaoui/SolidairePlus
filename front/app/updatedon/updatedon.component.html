@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webleb</title>
+    <link rel="stylesheet" href="./updatedon.component.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+
+<table class="table table-striped bordred">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col" class="border">Sélection</th>
+      <th scope="col" class="border">Libellé</th>
+      <th scope="col" class="border">Qt</th>
+      <th scope="col" class="border">Description</th>
+      <th scope="col" class="border">Photo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let don of dons" class="border-bottom">
+      <td class="border"><input type="checkbox" (change)="selectionnerDon(don)"></td>
+      <td class="border">{{ don.lib }}</td>
+      <td class="border">{{ don.Qt }}</td> <!-- Utilisation de don.quantite au lieu de don.qt -->
+      <td class="border">{{ don.desc }}</td>
+      <td class="border">{{ don.photo }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<button class="btn btn-outline-primary" (click)="toggleModifier()">Modifier</button>
+<br>
+<br>
+<div *ngIf="modifierActivee">
+    <input type="text" name="id" placeholder="id" [(ngModel)]="id">
+  <input type="text" name="libelle" placeholder="Nouveau libellé" [(ngModel)]="lib">
+  <input type="text" name="quantite" placeholder="Nouvelle quantité" [(ngModel)]="Qt"> <!-- Utilisation de nouvelleQt au lieu de nouvelleQuantite -->
+  <input type="text" name="description" placeholder="Nouvelle description" [(ngModel)]="desc">
+  <input type="text" name="photo" placeholder="Nouvelle photo" [(ngModel)]="photo">
+  <br><br>
+  <button class="btn btn-outline-primary" (click)="modifierDons()">Confirmer</button>
+</div>
+
+</body>
+</html>

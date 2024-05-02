@@ -1,0 +1,130 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .navbar {
+    overflow: hidden;
+    background-color: #ac89cd;
+  }
+  
+  .navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+  }
+  
+  .navbar a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  .navbar a.active {
+    background-color: #666;
+  }
+  
+  .search-container {
+    float: right;
+  }
+  
+  .search-container input[type=text] {
+    padding: 6px;
+    margin-top: 8px;
+    font-size: 17px;
+    border: none;
+  }
+  
+  .search-container button {
+    float: right;
+    padding: 6px 10px;
+    margin-top: 8px;
+    margin-right: 16px;
+    background: #e7dfe7;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .search-container button:hover {
+    background: #ccc;
+  }
+  
+  
+  .btn {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color:  #973678;
+    font-size: 16px;
+    text-decoration: none;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 15px;
+    letter-spacing: 2px
+  }
+  .btn:hover {
+    background:  #973678;
+    color:  #973678;
+    border-radius: 5px;
+    box-shadow: 0 0 5px  #973678,
+                0 0 25px #973678,
+                0 0 50px #973678,
+                0 0 100px  #973678;
+  }
+  
+  .btn span {
+    position: absolute;
+    display: block;
+  }
+  
+  .btn span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent,  #973678);
+    animation: btn-anim1 1s linear infinite;
+  }
+  
+  
+  
+  .btn span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent,  #973678);
+    animation: btn-anim2 1s linear infinite;
+    animation-delay: .25s
+  }
+  
+  
+  
+  .btn span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent,  #973678);
+    animation: btn-anim3 1s linear infinite;
+    animation-delay: .5s
+  }
+  
+  
+  
+  .btn span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #973678);
+    animation: btn-anim4 1s linear infinite;
+    animation-delay: .75s
+  }
+  .user-icon {
+    margin-right: 5px; 
+    margin-left: 5px; 
+  }

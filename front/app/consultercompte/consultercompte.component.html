@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webleb</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+
+<table class="table table-striped bordred">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col" class="border">LIEN</th>
+      <th scope="col" class="border">CIN</th>
+      <th scope="col" class="border">EMAIL</th>
+      <th scope="col" class="border">Mot de passe</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="border"><a href="compte">demande</a></td>
+    </tr>
+    <tr *ngFor="let compte of comptes" class="border-bottom">
+      <td class="border"><input type="checkbox" (change)="selectionnerCompte(compte)"></td>
+      <td class="border">{{ compte.cin }}</td>
+      <td class="border">{{ compte.email }}</td>
+      <td class="border">{{ compte.password }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<a href="update" class="btn btn-outline-primary">Modifier</a>
+<button class="btn btn-outline-primary" (click)="supprimerComptesSelectionnes()">Supprimer</button>
+
+</body>
+</html>

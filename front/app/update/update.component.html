@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webleb</title>
+    <link rel="stylesheet" href="./update.component.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+
+<table class="table table-striped bordred">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col" class="border">LIEN</th>
+      <th scope="col" class="border">CIN</th>
+      <th scope="col" class="border">EMAIL</th>
+      <th scope="col" class="border">Mot de passe</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let compte of comptes" class="border-bottom">
+      <td class="border"><input type="checkbox" (change)="selectionnerCompte(compte)"></td>
+      <td class="border">{{ compte.cin }}</td>
+      <td class="border">{{ compte.email }}</td>
+      <td class="border">{{ compte.password }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<button class="btn btn-outline-primary" (click)="toggleModifier()">Modifier</button>
+<br>
+<br>
+<div *ngIf="modifierActivee">
+  <input type="text" name="cin" placeholder="cin" [(ngModel)]="cin">
+  <input type="text" name="email" placeholder="Nouvel email" [(ngModel)]="nouvelEmail">
+  <input type="password" name="password" placeholder="Nouveau mot de passe" [(ngModel)]="nouveauPassword">
+  <br><br>
+  <button class="btn btn-outline-primary" (click)="modifierComptes()">Confirmer</button>
+
+</div>
+
+</body>
+</html>
